@@ -1,0 +1,16 @@
+class Solution:
+
+    def isAutomorphicNumber(self, N: int) -> str:
+      n = N
+      a = N**2
+      end_digits = 0
+      place = 1
+      while(N):
+        end_digits+= a%10*place
+        a//=10
+        N//=10
+        place*=10
+      if(end_digits == n):
+        return "Automorphic Number"
+      else:
+        return "Not an Automorphic Number"
